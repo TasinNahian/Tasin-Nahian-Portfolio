@@ -127,7 +127,8 @@ Text on Screen
   #text{
     font-family: "Playfair Display", serif;
     font-size: 5vw;
-    color : white
+    color : white;
+    position : relative;
   }
   #hero > a{
     padding-top: 3em;
@@ -147,7 +148,20 @@ Text on Screen
     padding-top: 0.5em;
   }
 }
-
+.cursor{
+  display: inline-block;
+  animation: blink-animation 0.7s steps(5, start) infinite;
+  color: white;
+  position: absolute;
+  /* height: 100%; */
+  line-height: 1;
+  font-size: 1.6em;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -674,7 +688,7 @@ section {
 @media (max-width: 768px){
   .about .content{
     text-align:start;
-    padding: 0.5em;
+    padding: 0.75em;
   } 
   .about .image{
     min-height: 400px;
@@ -784,6 +798,7 @@ section {
   margin-top: -2px;
   border-left: 2px solid #2c4964;
   position: relative;
+  margin-left: 10px;
 }
 
 .resume .resume-item h4 {

@@ -8,7 +8,7 @@ function type() {
   if (index < text.length) {
     textElement.innerHTML += text.charAt(index);
     index++;
-    setTimeout(type, 100);
+    setTimeout(type, 150);
   } 
   else {
     cursorElement.style.display = "none"; // New
