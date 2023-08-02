@@ -1,13 +1,3 @@
-/**
-* Template Name: Lonely
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-/**
- * Hero text animation
- */
 
 const text = "Grit. Hustle. Thrive. Explore"; // Replace with your desired text
 const textElement = document.getElementById("text");
@@ -142,6 +132,11 @@ type();
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
+    if(select('#navbar').classList.contains('navbar-mobile')){
+      backtotop.classList.remove('active')
+    }else{
+      backtotop.classList.add('active')
+    }
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
@@ -153,6 +148,7 @@ type();
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
+      
     }
   }, true)
 
@@ -254,11 +250,14 @@ type();
     })
   }
 
-  
-
   /**
    * Initiate Pure Counter 
    */
   // new PureCounter();
-
 })()
+
+const openPdfButton = document.getElementById("openPdfButton");
+
+openPdfButton.addEventListener("click", function() {
+  const pdfUrl = "assets/pdf/CV_Tasin_Al_Nahian_Khan.pdf";
+  window.open(pdfUrl, "_blank")});
